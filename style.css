@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    background-image: url(img/1.jpg);
+    background-attachment: fixed;
+    background-blend-mode: hard-light;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper{
+    position: relative;
+    width: 750px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .8);
+    border: 7px solid #fff;
+    overflow: hidden;
+}
+.wrapper .images{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.wrapper .images .img-1{
+    width: 100%;
+    height: 100%;
+    background-image: url(img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper .images .img-2{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    filter: blur(7px);
+    background-image: url(img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper .slider{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.wrapper .slider input{
+    width: 100%;
+    outline: none;
+    appearance: none;
+    background: none;
+}
+.slider input::-webkit-slider-thumb{
+    appearance: none;
+    height: 486px;
+    width: 3px;
+    background-color: none;
+    cursor: col-resize;
+}
+.slider .drag-line{
+    width: 3px;
+    height: 486px;
+    position: absolute;
+    left:49.85% ;
+    pointer-events: none;
+}
+.slider .drag-line::before, 
+.slider .drag-line::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 222px;
+    background: #fff;
+}
+.slider .drag-line::before{
+    top: 0;
+}
+.slider .drag-line::after{
+    bottom: 0;
+}
+.slider .drag-line span{
+    width: 42px;
+    height: 42px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.slider .drag-line span::before,
+.slider .drag-line span::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.slider .drag-line span::before{
+    left: 40%;
+    border-left-color: #fff;
+}
+.slider .drag-line span::after{
+    left: 60%;
+    border-top-color: #fff;
+}
